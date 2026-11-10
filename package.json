@@ -1,0 +1,25 @@
+{
+  "name": "canvas-text",
+  "version": "0.1.0",
+  "description": "GPU-rendered (WebGL2/WebGPU) text display for console logs, terminal output, and plain text — no CodeMirror dependency",
+  "keywords": ["canvas", "webgl2", "webgpu", "text", "terminal", "ansi", "console"],
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./webgl2": "./src/entries/webgl2.js",
+    "./webgpu": "./src/entries/webgpu.js",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "check": "tsc -p tsconfig.json --noEmit",
+    "build": "node build.mjs",
+    "demo": "bun serve.mjs",
+    "bench": "bun bench/perf.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
